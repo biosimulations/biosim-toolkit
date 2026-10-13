@@ -74,6 +74,39 @@ wheels = [
 ]
 
 [[package]]
+name = "biosim-toolkit"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "bigraph-schema" },
+    { name = "process-bigraph" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "copasi-basico" },
+    { name = "pbsim-common" },
+    { name = "pytest" },
+    { name = "python-copasi" },
+    { name = "tellurium" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "bigraph-schema", specifier = ">=1.0.14" },
+    { name = "process-bigraph", specifier = ">=1.0.5" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "copasi-basico" },
+    { name = "pbsim-common", specifier = "==0.1.2" },
+    { name = "pytest", specifier = ">=8" },
+    { name = "python-copasi" },
+    { name = "tellurium", specifier = ">=2.2.11.1" },
+]
+
+[[package]]
 name = "certifi"
 version = "2026.7.22"
 source = { registry = "https://pypi.org/simple" }
@@ -1324,39 +1357,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/d3/72/f7214c3350105b5085402edd22d3f21b90e6469b165c25da5d7f2e90cfcd/pbsim_common-0.1.2.tar.gz", hash = "sha256:b498cd352c039d970b20127ff24345aa39491f6d70d708e02cc5e5bfe140dc50", size = 180060, upload-time = "2026-02-27T19:08:04.011Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/ac/46/4cc68db4658f8c1697d8993cca92c1f2c6c90a50d0d4d4d08fef4134a67d/pbsim_common-0.1.2-py3-none-any.whl", hash = "sha256:53f721ba7df82eca4227597a47fce6091a1dc62e8210c9eed5870fe4816c8030", size = 10139, upload-time = "2026-02-27T19:08:05.086Z" },
-]
-
-[[package]]
-name = "pbsim-sedml"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "bigraph-schema" },
-    { name = "process-bigraph" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "copasi-basico" },
-    { name = "pbsim-common" },
-    { name = "pytest" },
-    { name = "python-copasi" },
-    { name = "tellurium" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "bigraph-schema", specifier = ">=1.0.14" },
-    { name = "process-bigraph", specifier = ">=1.0.5" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "copasi-basico" },
-    { name = "pbsim-common", specifier = "==0.1.2" },
-    { name = "pytest", specifier = ">=8" },
-    { name = "python-copasi" },
-    { name = "tellurium", specifier = ">=2.2.11.1" },
 ]
 
 [[package]]

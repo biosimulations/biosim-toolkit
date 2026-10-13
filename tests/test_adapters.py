@@ -1,10 +1,11 @@
-"""The adapters' work as plain functions: data generators, the report CSV, the Plotly figure."""
+"""The SED-ML steps' work as plain functions: data generators, the report CSV, the Plotly figure."""
 
 import csv
 import json
 from pathlib import Path
 
-from pbsim_sedml.adapters import data_generators, plotly_figure, write_plot, write_report
+from biosim_toolkit.sedml import data_generators, plot_figure, write_report
+from biosim_toolkit.viz import write_figure
 
 RESULT = {"time": [0.0, 1.0, 2.0, 3.0], "columns": ["A", "B"], "values": [[1, 10], [2, 20], [3, 30], [4, 40]]}
 
@@ -53,8 +54,8 @@ def test_a_plot_is_a_plotly_figure_with_its_data(tmp_path: Path) -> None:
         "log_y": True,
         "log_z": False,
     }
-    figure = plotly_figure(data, plot, "p")
+    figure = plot_figure(data, plot, "p")
     assert figure["data"] == [{"type": "scatter", "mode": "lines", "name": "A", "x": [0.0, 1.0], "y": [1.0, 2.0]}]
     assert figure["layout"] == {"title": {"text": "Figure 1"}, "yaxis": {"type": "log"}}
-    path = Path(write_plot(figure, plot, str(tmp_path)))
+    path = Path(write_figure(figure, str(tmp_path / plot["file"])))
     assert json.loads(path.read_text())["meta"] == {"sedml_plot": "p"}
