@@ -3,7 +3,7 @@ name = "pbsim-sedml"
 version = "0.1.0"
 description = "SED-ML adapter steps for process-bigraph: data generators, reports and plots around a generic time-course solver"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 license = "MIT"
 # bigraph-schema is a direct requirement: process-bigraph's discovery scans only distributions that require it, and
 # registers each Edge class as local:<module>.<Class>.
